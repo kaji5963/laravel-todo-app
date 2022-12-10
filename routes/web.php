@@ -39,19 +39,19 @@ Route::prefix('todos')
         Route::get('/create', 'create')
             ->name('create');
         //登録処理
-        Route::post('/', 'store')
+        Route::post('/create', 'store')
             ->name('store');
         //編集画面表示
         Route::get('/edit/{id}', 'edit')
             ->name('edit');
         //編集処理
-        Route::post('/{id}', 'update')
+        Route::post('/edit/{id}', 'update')
             ->name('update');
         //削除画面表示
         Route::get('/delete/{id}', 'delete')
             ->name('delete');
         //削除処理
-        Route::post('/{id}', 'destroy')
+        Route::post('/delete/{id}', 'destroy')
             ->name('destroy');
     });
 
