@@ -8,11 +8,9 @@
     <form action="{{ route('todos.store') }}" method="post">
         @csrf
         @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach
-            </ul>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
         @endif
         <input type="text" name="task">
         <input type="submit" value="登録">

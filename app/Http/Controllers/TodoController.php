@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateRequest;
+use App\Http\Requests\editRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Auth::user()->todos;
+        // $todos = Auth::user()->todos;
+        $user_id = Auth::user()->id;
+        $todos = Todo::where('user_id', '=', $user_id)->orderBy('id', 'desc')->get();
 
         return view('todos.index', ['todos' => $todos]);
     }
@@ -66,7 +69,7 @@ class TodoController extends Controller
      *
      * @return redirect
      */
-    public function update(Request $request, $id)
+    public function update(editRequest $request, $id)
     {
         $updateTodo = Todo::find($id);
         $updateTodo->task = $request->task;
