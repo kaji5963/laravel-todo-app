@@ -19,26 +19,31 @@ class todoSeeder extends Seeder
                 'task' => '鈴木さんのTODO①',
                 'user_id' => 1,
                 'created_at' => Now(),
+                'updated_at' => Now(),
             ],
             [
                 'task' => '鈴木さんのTODO②',
                 'user_id' => 1,
                 'created_at' => Now(),
+                'updated_at' => Now(),
             ],
             [
                 'task' => '鈴木さんのTODO③',
                 'user_id' => 1,
                 'created_at' => Now(),
+                'updated_at' => Now(),
             ],
             [
                 'task' => '佐藤さんのTODO①',
                 'user_id' => 2,
                 'created_at' => Now(),
+                'updated_at' => Now(),
             ],
             [
                 'task' => '佐藤さんのTODO②',
                 'user_id' => 2,
                 'created_at' => Now(),
+                'updated_at' => Now(),
             ],
         ]);
     }

@@ -11,6 +11,7 @@
     <ul>
         @foreach ($todos as $todo)
             <li>{{ $todo->task }}
+                <button><a href="{{ route('todos.show', ['id' => $todo->id]) }}">詳細</a></button>
                 <button><a href="{{ route('todos.edit', ['id' => $todo->id]) }}">更新</a></button>
                 <button><a href="{{ route('todos.delete', ['id' => $todo->id]) }}">削除</a></button>
             </li>
