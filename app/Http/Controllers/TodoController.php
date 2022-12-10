@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateRequest;
-use App\Http\Requests\editRequest;
+use App\Http\Requests\EditRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,7 +69,7 @@ class TodoController extends Controller
      *
      * @return redirect
      */
-    public function update(editRequest $request, $id)
+    public function update(EditRequest $request, $id)
     {
         $updateTodo = Todo::find($id);
         $updateTodo->task = $request->task;
