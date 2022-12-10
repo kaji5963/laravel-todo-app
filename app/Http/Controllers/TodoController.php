@@ -54,12 +54,13 @@ class TodoController extends Controller
     /**
      * 詳細画面表示
      *
-     * @return redirect
+     * @return view
+     * @param showTodo
      */
     public function show($id)
     {
         $showTodo = Todo::find($id);
-        
+
         return view('todos.show', ['showTodo' => $showTodo]);
     }
 
