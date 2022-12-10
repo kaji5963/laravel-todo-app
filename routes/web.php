@@ -41,6 +41,9 @@ Route::prefix('todos')
         //登録処理
         Route::post('/create', 'store')
             ->name('store');
+        //詳細画面表示
+        Route::get('/show/{id}', 'show')
+            ->name('show');
         //編集画面表示
         Route::get('/edit/{id}', 'edit')
             ->name('edit');

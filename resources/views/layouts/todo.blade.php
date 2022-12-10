@@ -11,7 +11,7 @@
 <style>
     input {
         cursor: pointer;
-        margin-left: 12px;
+        margin-left: 16px;
     }
 
     li {
@@ -23,7 +23,7 @@
 
     button {
         cursor: pointer;
-        margin-left: 12px;
+        margin-left: 16px;
     }
 
     a {
@@ -33,6 +33,10 @@
 
     p {
         color: red;
+    }
+
+    h2 {
+        margin-left: 16px;
     }
 
     h3 {

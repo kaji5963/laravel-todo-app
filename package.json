@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "mix",
+        "development": "vite",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
@@ -19,5 +19,8 @@
         "postcss": "^8.2.1",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^3.0.0"
+    },
+    "dependencies": {
+        "vite": "^4.0.0"
     }
 }
