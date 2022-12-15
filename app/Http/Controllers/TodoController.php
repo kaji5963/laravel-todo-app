@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateRequest;
 use App\Http\Requests\EditRequest;
-use App\Models\Todo;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Services\TodoService;
 
 class TodoController extends Controller
 {
@@ -18,9 +16,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        // $todos = Auth::user()->todos;
-        $user_id = Auth::user()->id;
-        $todos = Todo::where('user_id', '=', $user_id)->orderBy('id', 'desc')->get();
+        $todos = TodoService::service_get();
 
         return view('todos.index', ['todos' => $todos]);
     }
@@ -42,12 +38,8 @@ class TodoController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $user_id = Auth::user()->id;
+        TodoService::service_create($request);
 
-        Todo::create([
-            'task' => $request->task,
-            'user_id' => $user_id,
-        ]);
         return redirect('todos');
     }
 
@@ -59,7 +51,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        $showTodo = Todo::find($id);
+        $showTodo = TodoService::service_show($id);
 
         return view('todos.show', ['showTodo' => $showTodo]);
     }
@@ -72,7 +64,7 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        $editTodo = Todo::find($id);
+        $editTodo = TodoService::service_edit($id);
 
         return view('todos.edit', ['editTodo' => $editTodo]);
     }
@@ -84,9 +76,7 @@ class TodoController extends Controller
      */
     public function update(EditRequest $request, $id)
     {
-        $updateTodo = Todo::find($id);
-        $updateTodo->task = $request->task;
-        $updateTodo->save();
+        TodoService::service_update($request, $id);
 
         return redirect('todos');
     }
@@ -99,7 +89,7 @@ class TodoController extends Controller
      */
     public function delete($id)
     {
-        $deleteTodo = Todo::find($id);
+        $deleteTodo = TodoService::service_delete($id);
 
         return view('todos.delete', ['deleteTodo' => $deleteTodo]);
     }
@@ -111,7 +101,7 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        Todo::find($id)->delete();
+        TodoService::service_destroy($id);
 
         return redirect('todos');
     }
