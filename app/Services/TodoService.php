@@ -40,17 +40,17 @@ class TodoService
     return $showTodo;
   }
 
-  /**
-   * 編集画面表示
-   *
-   * @param id
-   */
-  public static function service_edit($id)
-  {
-    $editTodo = TodoRepository::repository_edit($id);
+//   /**
+//    * 編集画面表示
+//    *
+//    * @param id
+//    */
+//   public static function service_edit($id)
+//   {
+//     $editTodo = TodoRepository::repository_edit($id);
 
-    return $editTodo;
-  }
+//     return $editTodo;
+//   }
 
 
   /**
@@ -64,18 +64,18 @@ class TodoService
     TodoRepository::repository_update($request, $id);
   }
 
-  /**
-   * 削除画面表示
-   *
-   * @return deleteTodo
-   * @param id
-   */
-  public static function service_delete($id)
-  {
-    $deleteTodo = TodoRepository::repository_delete($id);
+//   /**
+//    * 削除画面表示
+//    *
+//    * @return deleteTodo
+//    * @param id
+//    */
+//   public static function service_delete($id)
+//   {
+//     $deleteTodo = TodoRepository::repository_delete($id);
 
-    return $deleteTodo;
-  }
+//     return $deleteTodo;
+//   }
 
   /**
    * 削除処理

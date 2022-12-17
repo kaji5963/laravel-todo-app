@@ -18,7 +18,7 @@
         margin-top: 12px;
         font-size: 20px;
         display: flex;
-
+        align-items: start;
     }
 
     button {
