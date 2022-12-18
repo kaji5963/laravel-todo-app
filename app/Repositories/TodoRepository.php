@@ -46,18 +46,18 @@ class TodoRepository
     return $showTodo;
   }
 
-//   /**
-//    * dbからparamのidで編集データ取得
-//    *
-//    * @return editTodo
-//    * @param id
-//    */
-//   public static function repository_edit($id)
-//   {
-//     $editTodo = Todo::find($id);
+  //   /**
+  //    * dbからparamのidで編集データ取得
+  //    *
+  //    * @return editTodo
+  //    * @param id
+  //    */
+  //   public static function repository_edit($id)
+  //   {
+  //     $editTodo = Todo::find($id);
 
-//     return $editTodo;
-//   }
+  //     return $editTodo;
+  //   }
 
   /**
    * 既存todoの編集処理
@@ -72,17 +72,17 @@ class TodoRepository
     $updateTodo->save();
   }
 
-//   /**
-//    * dbからparamのidで削除データ取得
-//    *
-//    * @param id
-//    */
-//   public static function repository_delete($id)
-//   {
-//     $deleteTodo = Todo::find($id);
+  //   /**
+  //    * dbからparamのidで削除データ取得
+  //    *
+  //    * @param id
+  //    */
+  //   public static function repository_delete($id)
+  //   {
+  //     $deleteTodo = Todo::find($id);
 
-//     return $deleteTodo;
-//   }
+  //     return $deleteTodo;
+  //   }
 
   /**
    * 既存todoの削除処理

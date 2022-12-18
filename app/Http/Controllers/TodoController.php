@@ -53,7 +53,7 @@ class TodoController extends Controller
     {
         $showTodo = TodoService::service_show($id);
 
-        return view('todos.show', ['showTodo' => $showTodo]);
+        return view('todos.show', ['showTodo' => $showTodo,]);
     }
 
     // /**

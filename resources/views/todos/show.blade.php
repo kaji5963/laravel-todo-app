@@ -8,8 +8,8 @@
     <h2>作成日：{{ $showTodo->created_at }}</h2>
     <h2>更新日：{{ $showTodo->updated_at }}</h2>
     <h2>タスク：{{ $showTodo->task }}</h2>
-    <button><a href="{{ route('todos.index') }}">戻る</a></button>
-
+    <button><a href="{{ route(session('key')) }}">戻る</a></button>
+    {{-- <button><a href="{{ route('todos.index') }}">戻る</a></button> --}}
 
     <form action="{{ route('todos.update', ['id' => $showTodo->id]) }}" method="post">
         @csrf
