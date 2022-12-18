@@ -21,15 +21,15 @@ class TodoController extends Controller
         return view('todos.index', ['todos' => $todos]);
     }
 
-    /**
-     * 登録画面表示
-     *
-     * @return view
-     */
-    public function create()
-    {
-        return view('todos.create');
-    }
+    // /**
+    //  * 登録画面表示
+    //  *
+    //  * @return view
+    //  */
+    // public function create()
+    // {
+    //     return view('todos.create');
+    // }
 
     /**
      * 登録処理
@@ -53,21 +53,21 @@ class TodoController extends Controller
     {
         $showTodo = TodoService::service_show($id);
 
-        return view('todos.show', ['showTodo' => $showTodo]);
+        return view('todos.show', ['showTodo' => $showTodo,]);
     }
 
-    /**
-     * 編集画面表示
-     *
-     * @return view
-     * @param editTodo
-     */
-    public function edit($id)
-    {
-        $editTodo = TodoService::service_edit($id);
+    // /**
+    //  * 編集画面表示
+    //  *
+    //  * @return view
+    //  * @param editTodo
+    //  */
+    // public function edit($id)
+    // {
+    //     $editTodo = TodoService::service_edit($id);
 
-        return view('todos.edit', ['editTodo' => $editTodo]);
-    }
+    //     return view('todos.edit', ['editTodo' => $editTodo]);
+    // }
 
     /**
      * 編集処理
@@ -81,18 +81,18 @@ class TodoController extends Controller
         return redirect('todos');
     }
 
-    /**
-     * 削除画面表示
-     *
-     * @return view
-     * @param deleteTodo
-     */
-    public function delete($id)
-    {
-        $deleteTodo = TodoService::service_delete($id);
+    // /**
+    //  * 削除画面表示
+    //  *
+    //  * @return view
+    //  * @param deleteTodo
+    //  */
+    // public function delete($id)
+    // {
+    //     $deleteTodo = TodoService::service_delete($id);
 
-        return view('todos.delete', ['deleteTodo' => $deleteTodo]);
-    }
+    //     return view('todos.delete', ['deleteTodo' => $deleteTodo]);
+    // }
 
     /**
      * 削除処理

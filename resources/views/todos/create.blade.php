@@ -1,4 +1,4 @@
-@extends('layouts.todo')
+{{-- @extends('layouts.todo')
 
 @section('title', 'todo create')
 
@@ -18,4 +18,4 @@
     </form>
 </body>
 
-</html>
+</html> --}}

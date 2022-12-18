@@ -36,25 +36,25 @@ Route::prefix('todos')
         Route::get('/', 'index')
             ->name('index');
         //登録画面表示
-        Route::get('/create', 'create')
-            ->name('create');
+        // Route::get('/create', 'create')
+        //     ->name('create');
         //登録処理
-        Route::post('/create', 'store')
+        Route::post('/', 'store')
             ->name('store');
         //詳細画面表示
         Route::get('/show/{id}', 'show')
             ->name('show');
-        //編集画面表示
-        Route::get('/edit/{id}', 'edit')
-            ->name('edit');
+        // //編集画面表示
+        // Route::get('/edit/{id}', 'edit')
+        //     ->name('edit');
         //編集処理
-        Route::post('/edit/{id}', 'update')
+        Route::post('/show/{id}', 'update')
             ->name('update');
-        //削除画面表示
-        Route::get('/delete/{id}', 'delete')
-            ->name('delete');
+        // //削除画面表示
+        // Route::get('/delete/{id}', 'delete')
+        //     ->name('delete');
         //削除処理
-        Route::post('/delete/{id}', 'destroy')
+        Route::post('/{id}', 'destroy')
             ->name('destroy');
     });
 
