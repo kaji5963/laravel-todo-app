@@ -14,9 +14,6 @@ class TodoService
    */
   public static function service_get()
   {
-    //一覧画面遷移時にtodos.indexのrouteをグローバルなsessionとして保存
-    session(['key' => 'todos.index']);
-
     $todos = TodoRepository::repository_get();
 
     return $todos;

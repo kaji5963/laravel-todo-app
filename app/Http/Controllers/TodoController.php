@@ -8,6 +8,11 @@ use App\Services\TodoService;
 
 class TodoController extends Controller
 {
+    public function __construct()
+    {
+        //　TodoController実行時にtodos.indexのrouteをグローバルなsessionとして保存
+        session(['key' => 'todos.index']);
+    }
     /**
      * 一覧画面表示
      *

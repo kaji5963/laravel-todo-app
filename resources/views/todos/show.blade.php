@@ -10,7 +10,6 @@
     <h2>タスク：{{ $showTodo->task }}</h2>
     <button><a href="{{ route(session('key')) }}">戻る</a></button>
     {{-- <button><a href="{{ route('todos.index') }}">戻る</a></button> --}}
-
     <form action="{{ route('todos.update', ['id' => $showTodo->id]) }}" method="post">
         @csrf
         @if ($errors->any())

@@ -41,7 +41,8 @@ class TodoRepository
    */
   public static function repository_show($id)
   {
-    $showTodo = Todo::find($id);
+    $user_id = Auth::user()->id;
+    $showTodo = Todo::where('user_id', '=', $user_id)->findOrFail($id);
 
     return $showTodo;
   }
@@ -67,7 +68,7 @@ class TodoRepository
    */
   public static function repository_update($request, $id)
   {
-    $updateTodo = Todo::find($id);
+    $updateTodo = Todo::findOrFail($id);
     $updateTodo->task = $request->task;
     $updateTodo->save();
   }
